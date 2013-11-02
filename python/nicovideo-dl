@@ -398,7 +398,8 @@ for video_url_cmdl in cmdl_args:
                     vd = '/'.join(os.path.dirname(video_filename), video_dirname)
                 else:
                     vd = video_dirname
-                os.makedirs(vd)
+                if not os.path.exists(vd):
+                    os.makedirs(vd)
                 video_path = '/'.join((vd, os.path.basename(video_filename)))
                 video_file = open(video_path, 'wb')
             else:
