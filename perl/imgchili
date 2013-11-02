@@ -1,0 +1,19 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+use utf8;
+use LWP::Simple;
+
+my $url = $ARGV[0];
+
+my $html = get($url) or die "couldn";
+
+my @m = $html =~ m|(?<=img src=")http://t[^"]+|g;
+
+$" = "\n";
+
+foreach my $src (@m) {
+  $src =~ s|http://t|http://i|;
+  `wget $src`;
+}
