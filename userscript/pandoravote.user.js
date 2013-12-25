@@ -2,7 +2,7 @@
 // @name        pandraup
 // @namespace   https://github.com/poochin
 // @include     /^http://[^.]+\.pandoravote\.net/(up(\d+)?/)?index\.php\?id=/
-// @version     1.0.1
+// @version     1.0.2
 // @description ダウンロードへ飛びます
 // 
 // @author      poochin
